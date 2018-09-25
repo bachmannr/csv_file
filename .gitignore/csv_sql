@@ -1,0 +1,72 @@
+
+
+import sqlite3
+from sqlite3 import Error
+ 
+ 
+def create_connection():
+    """ create a database connection to a database that resides
+        in the memory
+    """
+    try:
+        conn = sqlite3.connect(':memory:')
+        print(sqlite3.version)
+    except Error as e:
+        print(e)
+    finally:
+        conn.close()
+ 
+if __name__ == '__main__':
+    create_connection()
+
+"""
+import sqlite3
+from sqlite3 import Error
+ 
+ 
+def create_connection(db_file):
+    """ create a database connection to a SQLite database """
+    try:
+        conn = sqlite3.connect(db_file)
+        print(sqlite3.version)
+    except Error as e:
+        print(e)
+    finally:
+        conn.close()
+ 
+if __name__ == '__main__':
+    create_connection("C:\\sqlite\db\pythonsqlite.db")
+ """
+ INSERT INTO table1 (
+ column1,
+ column2 ,..)
+VALUES
+ (
+ value1,
+ value2 ,...);
+ """
+ select * from Podcasts
+ """
+ CREATE TABLE [IF NOT EXISTS] [schema_name].Podcasts (
+ column_1 data_type PRIMARY KEY,
+   column_2 data_type NOT NULL,
+ column_3 data_type DEFAULT 0,
+ table_constraint
+) [WITHOUT ROWID];
+ """
+DROP TABLE [IF EXISTS] [schema_name.]table_name;
+CREATE TABLE contacts (
+ contact_id integer PRIMARY KEY,
+ first_name text NOT NULL,
+ last_name text NOT NULL,
+ email text NOT NULL UNIQUE,
+ phone text NOT NULL UNIQUE
+);
+"""
+INSERT INTO table1 (
+ column1,
+ column2 ,..)
+VALUES
+ (
+ value1,
+ value2 ,...);
